@@ -1,14 +1,14 @@
 import math, cmath
 
-def succ_complex(a):
+def succ(a):
     'a + 1'
     return a + 1
 
-def pred_complex(b):
+def pred(b):
     'b - 1'
     return b - 1
 
-from operator import add as add_complex, sub
+from operator import add, sub
 
 def bus(c, a):
     '-a + c'

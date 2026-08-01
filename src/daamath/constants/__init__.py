@@ -1,4 +1,6 @@
-from .derived import *
-from .miscellaneous import *
+from . import *
+
+from .boolean import *
 from .irrationals import *
-from .float import *
+from .datatypes import *
+from .cayley_dickson import * 

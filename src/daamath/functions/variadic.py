@@ -4,12 +4,6 @@
 #
 # if the primitive operator has an identity element, its minimum argument count is zero. otherwise, it must receive at least as much elements as the primitive requires.
 
-from numbers import Number, Real
-from collections.abc import Iterable
-import math, builtins, statistics, functools
-from . import logic
-from typing import Callable
-
 # this turns any binary operator into a variadic thing
 from functools import reduce as lfold
 
@@ -29,8 +23,15 @@ from builtins import sum as vadd
 # functools.partial(functools.reduce, h2c)
 from math import prod as vmul
 
-def vgcd(values): return math.gcd(*values)
-def vlcm(values): return math.lcm(*values)
+from numbers import Number, Real
+from collections.abc import Iterable
+import builtins, statistics, functools
+from . import logic
+from typing import Callable
+
+import math as _math
+def vgcd(values): return _math.gcd(*values)
+def vlcm(values): return _math.lcm(*values)
 def vmin(values): return min(values)
 def vmax(values): return max(values)
 
@@ -62,9 +63,9 @@ from builtins import max as mean__inf
 
 def mean(data: Iterable[Number], *, power: Real = 1) -> Number:
 	'power mean AKA generalized mean (p=1: arithmetic, 0: geometric, -1: harmonic)'
-	if power == -math.inf:
+	if power == -_math.inf:
 		return min(data)
-	elif power == math.inf:
+	elif power == _math.inf:
 		return max(data)
 	else:
 		return (sum(x ** power for x in data) / len(data)) ** (1 / power)
