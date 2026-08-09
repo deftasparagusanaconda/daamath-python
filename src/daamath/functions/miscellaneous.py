@@ -210,7 +210,7 @@ def rem(a, b, round: Callable[[Real], Integral] = builtins.round):
     'remainder'
     ...
 
-from math import fma
+from pyfma import fma
 
 def fsd(d, c, b):
     'fused subtract-divide'

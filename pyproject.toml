@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-version = "0.5.3"
+version = "0.5.5"
 #dynamic = ["version"]
 description = "a mathematician's spellbook"
 readme = "readme.md"

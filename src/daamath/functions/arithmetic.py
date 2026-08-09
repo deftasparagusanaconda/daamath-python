@@ -103,5 +103,3 @@ def ln1p(c: Number) -> Number:
             return math.log(1 + c)
     except:    
         return cmath.log(1 + c)
-
-from pyfma import fma
