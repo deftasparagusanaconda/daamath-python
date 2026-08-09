@@ -104,9 +104,4 @@ def ln1p(c: Number) -> Number:
     except:    
         return cmath.log(1 + c)
 
-try:
-    from math import fma
-except ImportError:
-    def fma(a: float, b: float, c: float) -> float:
-        '(a * b) + c, fused multiply add'
-        return a * b + c
+from pyfma import fma

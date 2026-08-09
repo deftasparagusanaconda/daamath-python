@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-version = "0.5.2"
+version = "0.5.3"
 #dynamic = ["version"]
 description = "a mathematician's spellbook"
 readme = "readme.md"
@@ -31,8 +31,7 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"   
 ]
 
-# daamath must have zero dependencies. thats one beauty of it.
-dependencies = []
+dependencies = ['pyfma']
 
 [project.urls]
 Homepage = "https://github.com/deftasparagusanaconda/daamath"
