@@ -210,7 +210,13 @@ def rem(a, b, round: Callable[[Real], Integral] = builtins.round):
     'remainder'
     ...
 
-from pyfma import fma
+import sys, ctypes, ctypes.util
+_libm = ctypes.CDLL('ucrtbase') if sys.platform == 'win32' else ctypes.CDLL(ctypes.util.find_library('m'))
+_libm.fma.restype = ctypes.c_double
+_libm.fma.argtypes = [ctypes.c_double, ctypes.c_double, ctypes.c_double]
+def fma(a, b, c):
+    'fused multiply-add, with a single rounding'
+    return _libm.fma(a, b, c)
 
 def fsd(d, c, b):
     'fused subtract-divide'

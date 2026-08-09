@@ -31,7 +31,7 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"   
 ]
 
-dependencies = ['pyfma']
+dependencies = ['']
 
 [project.urls]
 Homepage = "https://github.com/deftasparagusanaconda/daamath"
