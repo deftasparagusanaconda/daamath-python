@@ -1,0 +1,11 @@
+one = '➀'
+two = '➁'
+three = '➂'
+four = '➃'
+five = '➄'
+six = '➅'
+seven = '➆'
+eight = '➇'
+nine = '➈'
+ten = '➉'
+from . import negative

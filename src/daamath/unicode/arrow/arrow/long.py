@@ -1,0 +1,3 @@
+west = '⟵'
+east = '⟶'
+horizontal = '⟷'

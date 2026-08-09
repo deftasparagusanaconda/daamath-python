@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-version = "0.5.5"
+version = "0.6.0"
 #dynamic = ["version"]
 description = "a mathematician's spellbook"
 readme = "readme.md"
@@ -31,7 +31,7 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"   
 ]
 
-dependencies = ['']
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/deftasparagusanaconda/daamath"

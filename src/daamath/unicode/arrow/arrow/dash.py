@@ -1,0 +1,4 @@
+west = '⇠'
+east = '⇢'
+north = '⇡'
+south = '⇣'

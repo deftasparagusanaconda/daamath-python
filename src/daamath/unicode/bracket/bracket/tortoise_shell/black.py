@@ -1,0 +1,4 @@
+left = '⦗'
+right = '⦘'
+top = '⏠'
+bottom = '⏡'

@@ -1,0 +1,2 @@
+rising = '⎰'
+falling = '⎱'

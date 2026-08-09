@@ -1,0 +1,3 @@
+virama = '्'
+anusvara = 'ं'
+visarga = 'ः'

@@ -1,0 +1,4 @@
+vertical = '⋮'
+horizontal = '⋯'
+forward = '⋰'
+backward = '⋱'

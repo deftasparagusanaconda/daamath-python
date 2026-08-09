@@ -1,0 +1,11 @@
+zero = '𝟢'
+one = '𝟣'
+two = '𝟤'
+three = '𝟥'
+four = '𝟦'
+five = '𝟧'
+six = '𝟨'
+seven = '𝟩'
+eight = '𝟪'
+nine = '𝟫'
+from . import bold

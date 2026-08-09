@@ -1,0 +1,3 @@
+top = '⎞'
+middle = '⎟'
+bottom = '⎠'

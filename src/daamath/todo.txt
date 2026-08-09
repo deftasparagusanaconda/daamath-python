@@ -1,0 +1,6 @@
+greetings daa. have a nice day! your todo list is:
+
+* get the Constant class working. dont let the converters be unfaithful
+* figure out a way for users import daamath partially... or something
+* make a constants module generator that generates modules instead of using SimpleNamespace
+* make the generator for the unicode module
