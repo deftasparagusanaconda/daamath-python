@@ -42,6 +42,20 @@ NBAT
 # 1110 nand  (complement of intersection)
 # 1111 all
 '''
+
+def not_(a): return a.not_()
+def and_(a): return a.and_()
+def or_(a): return a.or_()
+def xor(a): return a.xor()
+def imp(a): return a.imp()
+def con(a): return a.con()
+def nand(a): return a.nand()
+def nor(a): return a.nor()
+def nxor(a): return a.nxor()
+def nimp(a): return a.nimp()
+def ncon(a): return a.ncon()
+#def (a): return a.()
+'''
 def not_(a: bool | int | set, *, universe: set = None) -> bool | int | set:
     'not, negation, complement'
     match a:
@@ -129,4 +143,4 @@ def ncon(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case  int(): return ~a & b
         case  set(): return b.difference(a)
         case      _: raise TypeError()
-
+'''

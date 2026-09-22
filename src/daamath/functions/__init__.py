@@ -1,10 +1,10 @@
 from . import *
 
-from .arithmetic import *
+from .arithmetic_extra import *
 from .combinatoric import *
 from .complex import *
 from .complex_extra import *
-from .hyperoperations import *
+from .arithmetic import *
 from .logic import *
 from .mapping import *
 from .miscellaneous import *

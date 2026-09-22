@@ -1,105 +1,81 @@
-import math, cmath
-from numbers import Number, Real
+#def succ(a):
+#    'successor'
+#    return a + 1
 
-def ainv(a: Number) -> Number:
-    'sub(0, a), additive inverse'
+#def pred(b):
+#    'predecessor'
+#    return b - 1
+
+def add(a, b):
+    'solve for c in a + b = c. tries a.__dm_add__(b) and b.__dm_radd__(a)'
+    if (result := a.__dm_add__(b)) is not NotImplemented:
+        return result
     
-    return -a
+    if (result := b.__dm_radd__(a)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for {__name__}: '{type(a)}' and '{type(b)}'")
 
-def minv(a: Number) -> Number:
-    'div(1, a), multiplicative inverse'
-    b = 1 / a
+def bus(c, a):
+    'solve for b in a + b = c. tries c.__bus__(a) and a.__rbus__(c)'
+    if (result := c.__bus__(a)) is not NotImplemented:
+        return result
+    
+    if (result := a.__rbus__(c)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for {__name__}: '{type(c)}' and '{type(a)}'")
 
+def sub(c, b):
+    'solve for a in a + b = c. tries c.__dm_sub__(b) and b.__dm_rsub__(c)'
+    if (result := c.__dm_sub__(b)) is not NotImplemented:
+        return result
+    
+    if (result := b.__dm_rsub__(c)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for {__name__}: '{type(c)}' and '{type(b)}'")
 
-    return b
+from operator import mul, truediv as div
 
-'''
-def abs_sq(a: Number) -> Real:
-    if isinstance(x, Complex):
-        return x.real * x.real + x.imag * x.imag 
-    else:
-        return abs(a) ** 2
-'''
+def mul(a, b):
+    'solve for c in a + b = c. tries a.__dm_add__(b) and b.__dm_radd__(a)'
+    if (result := a.__dm_add__(b)) is not NotImplemented:
+        return result
+    
+    if (result := b.__dm_radd__(a)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for {__name__}: '{type(a)}' and '{type(b)}'")
 
-def sq(a: Number) -> Number:
-    'pow(a, 2), inverse of sqrt'
-    return a * a
+def vid(c, a):
+    'solve for b in a * b = c. tries c.__vid__(a) and a.__rvid__(c)'
+    if (result := c.__vid__(a)) is not NotImplemented:
+        return result
+    
+    if (result := a.__rvid__(c)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for vid: '{type(c)}' and '{type(a)}'")
 
-def cb(a: Number) -> Number:
-    'pow(a, 3), inverse of cbrt'
-    return a * a * a
+from operator import pow
 
-def sqrt(c: Number) -> Number:
-    'root(2, a). inverse of square'
-    try:    return math.sqrt(c)
-    except:    return cmath.sqrt(c)
+def log(c, b):
+    'solve for a in a ** b = c. tries c.__log__(b) and b.__rlog__(c)'
+    if (result := c.__log__(b)) is not NotImplemented:
+        return result
+    
+    if (result := b.__rlog__(c)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for log: '{type(c)}' and '{type(b)}'")
 
-def cbrt(c: Number) -> Number:
-    'root(3, a). inverse of cube'
-    try:    return math.cbrt(c)
-    except: return c ** (1 / 3)
-
-def rsq(a: Number) -> Number:
-    'reciprocal square. inverse of rsqrt'
-    return a ** -2
-
-def rcb(a: Number) -> Number:
-    'reciprocal cube. inverse of rcbrt'
-    return a ** -2
-
-def rsqrt(c: Number) -> Number:
-    'reciprocal square root. inverse of rsquare'
-    return c ** -0.5
-
-def rcbrt(c: Number) -> Number:
-    'reciprocal cube root. inverse of rcube'
-    return a ** -3
-
-def exp(b: Number) -> Number:
-    'e ^ b'
-    try:    return math.exp(b)
-    except: return cmath.exp(b)
-
-def exp2(b: Number) -> Number:
-    'pow(2, b), inverse of log_2'
-    try:    return math.exp2(b)
-    except:    return 2 ** b
-
-def exp10(b: Number) -> Number:
-    'pow(10, b), inverse of log_10'
-    return 10 ** b
-
-def ln(c: Number) -> Number:
-    'log_e(c)'
-    try:    return math.log(c)
-    except: return cmath.log(c)
-
-def log2(a: Number) -> Number:
-    'log(a, 2), inverse of pow_2'
-    try:    return math.log2(a)
-    except:    return cmath.log(a, 2)
-
-def log10(a: Number) -> Number:
-    'log(a, 10), inverse of pow_10'
-    try:    return math.log10(a)
-    except: return cmath.log10(a)
-
-#def pow_m1(a: Number, b: Number) -> Number:
-#    return math.expm1(math.log(a) * b)
-
-#def root_1p(a: Number, b: Number) -> Number:
-#    return math.exp(math.log1p(a) / b)
-
-def expm1(b: Number) -> Number:
-    'exp(b) - 1'
-    return e ** b - 1
-
-def ln1p(c: Number) -> Number:
-    'ln(1 + c)'
-    try:
-        try:
-            return math.log1p(c)
-        except:
-            return math.log(1 + c)
-    except:    
-        return cmath.log(1 + c)
+def root(c, a):
+    'solve for b in a ** b = c. tries c.__root__(a) and a.__rroot__(c)'
+    if (result := c.__root__(a)) is not NotImplemented:
+        return result
+    
+    if (result := a.__rroot__(c)) is not NotImplemented:
+        return result
+	
+    raise TypeError(f"unsupported operand type(s) for root: '{type(c)}' and '{type(a)}'")

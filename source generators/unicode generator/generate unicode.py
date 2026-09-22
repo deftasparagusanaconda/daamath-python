@@ -29,6 +29,6 @@ for file in pwd.iterdir():
     yaml_to_python(file.stem, yaml.safe_load(open(file)), pwd / 'unicode')
 
 (pwd / 'unicode').mkdir(parents=True, exist_ok=True)
-(pwd/'unicode/__init__.py').write_text('\n'.join(f'from .{file.stem} import *' for file in pwd.iterdir() if file.suffix == '.yaml'))
+(pwd / 'unicode/__init__.py').write_text('\n'.join(f'from .{file.stem} import *' for file in pwd.iterdir() if file.suffix == '.yaml'))
 
 # correct quirks yourself
