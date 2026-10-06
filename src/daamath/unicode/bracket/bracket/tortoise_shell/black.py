@@ -1,4 +1,0 @@
-left = '⦗'
-right = '⦘'
-top = '⏠'
-bottom = '⏡'

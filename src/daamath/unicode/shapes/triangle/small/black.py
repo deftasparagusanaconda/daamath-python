@@ -1,4 +1,0 @@
-west = '◂'
-east = '▸'
-north = '▴'
-south = '▾'

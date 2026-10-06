@@ -1,4 +1,0 @@
-vertical = '⋮'
-horizontal = '⋯'
-forward = '⋰'
-backward = '⋱'

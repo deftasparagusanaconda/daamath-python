@@ -1,7 +1,0 @@
-epsilon = '𝝐'
-theta = '𝝑'
-kappa = '𝝒'
-pi = '𝝕'
-rho = '𝝔'
-sigma = '𝝇'
-phi = '𝝓'

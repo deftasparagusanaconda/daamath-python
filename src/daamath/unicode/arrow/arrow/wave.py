@@ -1,3 +1,0 @@
-west = '↜'
-east = '↝'
-horizontal = '↭'

@@ -1,8 +1,0 @@
-beta = 'ᵝ'
-gamma = 'ᵞ'
-delta = 'ᵟ'
-epsilon = 'ᵋ'
-theta = 'ᶿ'
-iota = 'ᶥ'
-phi = 'ᵠ'
-chi = 'ᵡ'

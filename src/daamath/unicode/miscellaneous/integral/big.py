@@ -1,3 +1,0 @@
-top = '⌠'
-middle = '⎮'
-bottom = '⌡'

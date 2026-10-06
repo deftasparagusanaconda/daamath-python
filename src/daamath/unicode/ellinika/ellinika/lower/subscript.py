@@ -1,5 +1,0 @@
-beta = 'ᵦ'
-gamma = 'ᵧ'
-rho = 'ᵨ'
-phi = 'ᵩ'
-chi = 'ᵪ'
