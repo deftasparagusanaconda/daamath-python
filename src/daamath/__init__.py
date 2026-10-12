@@ -28,3 +28,5 @@ from .integer import integer
 from .rational import rational
 from .gaussian import gaussian
 
+from .posit import posit
+from .quire import quire
