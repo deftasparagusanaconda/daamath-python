@@ -15,4 +15,3 @@ from .natural import natural
 from .integer import integer
 from .rational import rational
 from .gaussian import gaussian
-

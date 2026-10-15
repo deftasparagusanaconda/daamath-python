@@ -1,3 +1,5 @@
+# test
+
 from __future__ import annotations
 
 import mpmath
@@ -7,16 +9,7 @@ from functools import cache
 from math import ceil, floor, trunc, log10
 from numbers import Rational
 from typing import Any
-
-def int_to_uint(x: int, n: int) -> int:
-    if not -1 << n - 1 <= x < +1 << n - 1:
-        raise ValueError(f'{x} ∉ [-2**{n-1}..+2**{n-1})')
-    return x if x >= 0 else x + (1 << n)
-
-def uint_to_int(x: int, n: int) -> int:
-    if not 0 <= x < 1 << n:
-        raise ValueError(f'{x} ∉ [0..2**{n})')
-    return x if x < (1 << n - 1) else x - (1 << n)
+from .int import int_to_uint, uint_to_int
 
 class posit:
     'yo sup lmao'
@@ -28,7 +21,7 @@ class posit:
             raise ValueError(f'{n=} must be any integer greater than 1')
         
         n_ = n
-        class Posit(Rational):
+        class Posit:
             f"""
             posit datatype of {n_} bits (see https://posithub.org)
             """
@@ -130,6 +123,11 @@ class posit:
             #     fuwa, hoge = self.as_hexponential()
             #     return f"0x{fuwa}p{hoge:+}"
             
+            @classmethod
+            def sqrt(cls, x: Posit) -> Posit:
+                mpmath.mp.dps = x.n * log10(2)
+                return cls(mpmath.sqrt(x))
+            
             def __eq__       (self, other): return           Fraction(self  ) == Fraction(other)
             def __le__       (self, other): return           Fraction(self  ) <= Fraction(other)
             def __lt__       (self, other): return           Fraction(self  ) <  Fraction(other)
@@ -170,7 +168,4 @@ class posit:
         
         return Posit
 
-    def sqrt(x: Posit) -> Posit:
-        mpmath.mp.dps = x.n * log10(2)
-        return type(x)(mpmath.sqrt(x))
     

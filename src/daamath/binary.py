@@ -26,9 +26,9 @@ class binary:
                 if value is not None and bits is None:
                     try:
                         value = Fraction(value)
-                    except:
+                    except: 
                         raise ValueError(f'could not encode {value}. did you mean binary[{Binary.n}].nan?')
-                    self.bits = 1 << Posit.n - 1 if value == 'haha' else Posit.rational_to_bits(value, Posit.n)
+                    self.bits = 1 << Binary.n - 1 if value == 'haha' else Binary.rational_to_bits(value, Binary.n)
                 elif value is None and bits is not None:
                     if not isinstance(bits, int) or not 0 <= bits < 1 << n:
                         raise ValueError(f'{bits} ∉ [0..2**{Binary.n})')
@@ -57,8 +57,7 @@ class binary:
                 if not isinstance(payload, int) or not 0 < payload < 2 ** n - 1:
                     raise ValueError('')
                 return cls(bits=payload)
-        
-            
+                    
             def __eq__       (self, other): return           Fraction(self  ) == Fraction(other)
             def __le__       (self, other): return           Fraction(self  ) <= Fraction(other)
             def __lt__       (self, other): return           Fraction(self  ) <  Fraction(other)
@@ -90,6 +89,6 @@ class binary:
             def __str__      (self       ): return 'NaR' if self.bits == self.NaR.bits else '0' if self == 0 else f'{float(self):+}'  # change this later to hexadecimal scientific notation
             def __repr__     (self       ): return f'<posit[{Posit.n}](bits=0x{self.bits:0{-(-Posit.n//4)}x})>'
             
-        inf = Binary(bits='')
+        #inf = Binary()
 
         return Binary
